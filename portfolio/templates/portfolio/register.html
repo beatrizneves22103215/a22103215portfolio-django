@@ -1,0 +1,14 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+
+<h3>Register</h3>
+
+<form action="{% url 'portfolio:register' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Register">
+</form>
+
+
+{% endblock main %}

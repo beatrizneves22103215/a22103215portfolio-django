@@ -1,0 +1,20 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+
+<p>Likes: {{ post.likes }}</p>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit" name="action" value="like">Like</button>
+</form>
+
+<p>Comentários: {{ post.comments }}</p>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit" name="action" value="comment">Comentar</button>
+</form>
+
+

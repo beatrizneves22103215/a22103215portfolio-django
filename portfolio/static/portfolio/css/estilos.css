@@ -1,0 +1,87 @@
+* {
+    padding: 0; 
+    margin: 0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+  }
+
+  body {
+   background-color: withe;
+  }
+
+  img{
+  width:200px;
+  }
+
+  header {
+    height: 10vh;
+    background: black;
+    color: lightgray;
+    top: 0;  
+    
+    /* alinhando logo e menu */
+    display:flex;
+    justify-content: space-between;  
+    align-items: center;
+  }
+  
+  header div {
+    font-size: 2em;  
+    padding: 1em;
+  }
+  
+  header nav {
+    display:flex;
+    justify-content: flex-end;  
+  }
+
+  nav a:hover {
+  color: lightblue;
+  }
+  
+  nav a {
+    padding: 0 1em;
+    text-decoration: none;
+    font-size: 1rem;
+    color: lightgray;
+  }
+  
+  
+  main {
+    width: 50px;
+   padding: 10px;
+   background-color: lightblue;
+   border-radius: 6px;
+  }
+
+main p {
+   text-align: left;
+   padding: 20px;
+   margin: 10px;
+   color: black;
+   background-color: white;
+   border-radius: 3px;
+}
+
+main p:last-child {
+   background-color: darkkhaki;
+}
+
+  footer {
+   position: fixed;
+   bottom: 30px;
+   width: 100%;
+   color: black;
+   text-align: center;
+}
+
+grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+
+  .postal {
+    border: 1px solid #ccc;
+    padding: 20px;
+  }

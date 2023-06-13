@@ -1,0 +1,33 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+
+<h3>Login</h3>
+
+
+{% if not request.user.is_authenticated %}
+  {{ message }}
+{% endif %}
+
+<form action="{% url 'portfolio:login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Login">
+</form>
+
+<h3>Registro</h3>
+
+{% if message %}
+  <p>{{ message }}</p>
+{% endif %}
+
+<form action="{% url 'portfolio:register' %}" method="POST">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="Nome de usuário">
+  <input type="password" name="password" placeholder="Senha">
+  <input type="password" name="confirm_password" placeholder="Confirmar senha">
+  <input type="submit" value="Registrar">
+</form>
+
+{% endblock main %}

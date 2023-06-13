@@ -1,0 +1,62 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+
+{% block main %}
+
+{% if request.user.is_authenticated %}
+
+	<h3>Titulo</h3>
+    <p>texto texto texto texto texto texto texto </p>
+
+    {% load static %}
+   <img src="{% static 'portfolio/images/primeira.jpg' %}">
+   
+
+   <p>
+    {% if hora > 12 %}
+       Boa tarde,
+    {% else %}
+       Bom dia,
+    {% endif %}
+    estamos em {{ local }}, e são {{ hora }} horas.
+ </p>
+
+  {% for post in Post %}
+
+     <div>
+            <h2>{{ post.titulo }}</h2>
+            <p>Autor: {{ post.autor }}</p>
+            <p>Data: {{ post.data }}</p>
+            <p>Descrição: {{ post.descricao }}</p>
+            <p>Área: {{ post.area.nome }}</p>
+            <p>Likes: {{ post.likes }}</p>
+            <p>Link: <a href="{{ post.link }}">{{ post.link }}</a></p>
+         <a href="{% url 'portfolio:edita' post.id %}" class="btn btn-warning  btn-sm" >Editar</a>
+
+            <h3>Comentários</h3>
+            {% for comentario in post.comentarios.all %}
+                <div>
+                    <p>Autor: {{ comentario.autor.nome }}</p>
+                    <p>Título: {{ comentario.titulo }}</p>
+                    <p>Texto: {{ comentario.texto }}</p>
+                </div>
+            {% endfor %}
+
+
+
+
+
+        </div>
+        <hr>
+
+  {% endfor %}
+
+
+   <a href="{% url 'portfolio:nova' %}" class="btn btn-sucess">Novo Post</a>
+
+{% endif %}
+
+
+
+
+{% endblock %}
