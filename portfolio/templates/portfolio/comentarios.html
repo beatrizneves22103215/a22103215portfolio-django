@@ -2,7 +2,7 @@
 
 {% block main %}
 
-   <h3>Novo Post</h3>
+
 
 <form  action="{% url 'portfolio:edita' post_id  %}" method="POST">
     {% csrf_token %}
@@ -11,7 +11,6 @@
      <a href="{% url 'portfolio:home' %}" role="button" class="btn btn-warning">Cancelar</a>
     <input type="submit" value="Gravar">
      <a href="{% url 'portfolio:apaga' post_id %}" role="button" class="btn btn-danger">Apagar</a>
-
 
 </form>
 

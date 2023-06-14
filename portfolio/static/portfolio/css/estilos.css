@@ -6,7 +6,9 @@
   }
 
   body {
-   background-color: withe;
+   background-color: #F0F8FF;
+
+
   }
 
   img{
@@ -32,7 +34,7 @@
   
   header nav {
     display:flex;
-    justify-content: flex-end;  
+    justify-content: flex-end;
   }
 
   nav a:hover {
@@ -45,36 +47,63 @@
     font-size: 1rem;
     color: lightgray;
   }
+
+  nav p {
+  text-decoration: underline;
+  }
   
   
   main {
     width: 50px;
-   padding: 10px;
-   background-color: lightblue;
-   border-radius: 6px;
+   padding: 15px;
+   border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+
+
   }
 
 main p {
-   text-align: left;
+   text-align: center;
    padding: 20px;
    margin: 10px;
    color: black;
-   background-color: white;
-   border-radius: 3px;
+   background-color: lightblue;
+   border-radius: 20px;
 }
 
-main p:last-child {
-   background-color: darkkhaki;
+div{
+   text-align: center;
+   padding: 20px;
+   margin: 10px;
+   color: black;
+   background-color: lightblue;
+   border-radius: 20px;
+   width:500px;
+  justify-content: center;
+  align-items: center;
 }
+div h2, div p {
+  padding-bottom: 5px;
+  }
 
   footer {
-   position: fixed;
+   position:fixed;
    bottom: 30px;
    width: 100%;
    color: black;
    text-align: center;
+   text-width: bold;
 }
-
+footer a {
+text-decoration: none;
+color: black;
+}
 grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -85,3 +114,48 @@ grid-container {
     border: 1px solid #ccc;
     padding: 20px;
   }
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+
+ form{
+ margin-bottom: 20px;
+ }
+
+ h4{
+ font-style: italic;
+ }
+
+ div a {
+ color: black;
+ }
+
+  ul {
+    list-style-type: none;
+    margin: 30px;
+  }
+
+ul a {
+text-decoration: none;
+font-style:italic;
+color: black;
+}
+
+ul a:hover {
+color: #4682B4;
+}
+
+h3{
+font-style: italic;
+}
+
+#btn btn-sucess{
+color: blue;
+border-radius: 5px;
+}

@@ -16,6 +16,3 @@ class PostForm(ModelForm):
             'concluido': 'Concluída',
         }
 
-
-
-

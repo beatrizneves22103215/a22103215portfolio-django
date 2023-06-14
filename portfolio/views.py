@@ -1,8 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect, JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+from .models import Projeto, laboratorios
 
 from .forms import PostForm
 # Create your views here
@@ -19,15 +20,17 @@ from django.contrib.auth.decorators import login_required
 def home_page_view(request):
 
     local = 'Lisboa'
+    horas = datetime.now().time()
 
     context = {
         'ano': datetime.now().year,
         'local': local,
+        'horas': horas,
         'Post': Post.objects.all(),
     }
 
-
     return render(request, 'portfolio/home.html', context)
+
 
 
 def apresentacao_view(request):
@@ -114,3 +117,13 @@ def register_view(request):
 
 
         return HttpResponseRedirect(reverse('home'))
+
+
+def projetos_view(request):
+    projetos = Projeto.objects.all()
+    return render(request, 'portfolio/projetos.html', {'projetos': projetos})
+
+def laboratorios_view(request):
+    labs = laboratorios.objects.all()
+    return render(request, 'portfolio/competencias.html', {'laboratorios': labs})
+

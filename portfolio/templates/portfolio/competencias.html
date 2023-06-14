@@ -1,6 +1,24 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<h3>Titulo</h3>
-    <p>texto texto texto texto texto texto texto </p>
+
+
+
+	<h3>Laboratórios</h3>
+    <p>Labs realizados na disciplina</p>
+
+   <ul>
+    {% for lab in laboratorios %}
+        <div>
+           <li>
+            <h2>{{ lab.titulo }}</h2>
+            <p>{{ lab.descricao }}</p>
+            <p><a href="{{ lab.lab}}">Lab</a></p>
+          </li>
+        </div>
+    {% endfor %}
+    </ul>
+
+
+
 {% endblock %}

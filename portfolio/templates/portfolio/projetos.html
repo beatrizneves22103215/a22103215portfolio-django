@@ -1,6 +1,25 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<h3>Contactos</h3>
-    <p>texto texto texto texto texto texto texto </p>
+
+
+
+
+    <h3>Projetos fim de curso</h3>
+
+    <ul>
+    {% for projeto in projetos %}
+        <div>
+           <li>
+            <h2>{{ projeto.nome }}</h2>
+            <p><strong>Orientador:</strong> {{ projeto.orientador }}</p>
+            <p><strong>Resumo:</strong> {{ projeto.resumo }}</p>
+            <p><a href="{{ projeto.link1 }}">Link 1</a></p>
+            <p><a href="{{ projeto.link2 }}">Link 2</a></p>
+          </li>
+        </div>
+    {% endfor %}
+    </ul>
+
+
 {% endblock %}
