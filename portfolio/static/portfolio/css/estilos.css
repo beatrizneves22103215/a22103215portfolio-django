@@ -101,6 +101,7 @@ div h2, div p {
    text-width: bold;
 }
 footer a {
+position:fixed;
 text-decoration: none;
 color: black;
 }

@@ -107,6 +107,7 @@ def register_view(request):
 
         if password == confirm_password:
             user = User.objects.create_user(username=username, password=password)
+            user.save()
 
             login(request, user)
             return redirect('home')
