@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-from .models import Projeto, laboratorios
+from .models import Projeto, laboratorios, Cadeira
 
 from .forms import PostForm
 # Create your views here
@@ -11,7 +11,7 @@ from .models import Post
 from django.shortcuts import render
 from django.shortcuts import render
 from datetime import datetime
-from .models import Post, Comentario
+from .models import Post
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
@@ -20,7 +20,7 @@ from django.contrib.auth.decorators import login_required
 def home_page_view(request):
 
     local = 'Lisboa'
-    horas = datetime.now().time()
+    horas = datetime.now().hour
 
     context = {
         'ano': datetime.now().year,
@@ -127,3 +127,6 @@ def laboratorios_view(request):
     labs = laboratorios.objects.all()
     return render(request, 'portfolio/competencias.html', {'laboratorios': labs})
 
+def lista_cadeiras(request):
+    cadeiras = Cadeira.objects.all().order_by('ano', 'semestre')
+    return render(request, 'portfolio/licenciatura.html', {'cadeiras': cadeiras})

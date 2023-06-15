@@ -11,7 +11,8 @@
     {% for projeto in projetos %}
         <div>
            <li>
-            <h2>{{ projeto.nome }}</h2>
+            <h2>{{ projeto.projeto }}</h2>
+               <p><strong>Nomes:</strong> {{ projeto.nome }}</p>
             <p><strong>Orientador:</strong> {{ projeto.orientador }}</p>
             <p><strong>Resumo:</strong> {{ projeto.resumo }}</p>
             <p><a href="{{ projeto.link1 }}">Link 1</a></p>

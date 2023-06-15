@@ -6,7 +6,6 @@
   <h1>Welcome to my Portfolio</h1>
 
 
-
 {% if request.user.is_authenticated %}
 
 	<h3>Posts</h3>
@@ -29,28 +28,16 @@
             <p>Autor: {{ post.autor }}</p>
             <p>Data: {{ post.data }}</p>
             <p>Descrição: {{ post.descricao }}</p>
-            <p>Área: {{ post.area.nome }}</p>
+            <p>Área: {{ post.area }}</p>
             <p>Likes: {{ post.likes }}</p>
             <p>Link: <a href="{{ post.link }}">{{ post.link }}</a></p>
-         <a href="{% url 'portfolio:edita' post.id %}" class="btn btn-warning  btn-sm" style="background-color: black; border-color: black; color: white;" >Editar</a>
+             <a href="{% url 'portfolio:edita' post.id %}" class="btn btn-warning  btn-sm" style="background-color: black; border-color: black; color: white;" >Editar</a>
 
             <h3>Comentários</h3>
-
-       <form action="{% url 'portfolio:post_details' post.id %}" method="GET">
-        <button type="submit">Inserir Comentário</button>
-      </form>
-
      </div>
-
 
   {% endfor %}
 
-
-
-
 {% endif %}
-
-
-
 
 {% endblock %}

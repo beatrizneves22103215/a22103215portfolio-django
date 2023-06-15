@@ -20,5 +20,6 @@ urlpatterns = [
     path('register', views.register_view, name='register'),
     path('projetos', views.projetos_view, name='projetos'),
     path('competencias/', views.laboratorios_view, name='competencias'),
+    path('licenciatura', views.lista_cadeiras, name='licenciatura'),
 ]
 

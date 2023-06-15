@@ -1,0 +1,27 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+
+ <h1>Lista de Cadeiras</h1>
+    {% for cadeira in cadeiras %}
+        <div>
+            <h2>{{ cadeira.nome }}</h2>
+            <p>Ano: {{ cadeira.ano }}</p>
+            <p>Semestre: {{ cadeira.semestre }}</p>
+            <p>ECTS: {{ cadeira.ects }}</p>
+            <p>Ano Letivo: {{ cadeira.ano_letivo_frequentado }}</p>
+            <p>Tópicos Abordados: {{ cadeira.topicos_abordados }}</p>
+            <p>Professores:</p>
+            <ul>
+                {% for professor in cadeira.professores.all %}
+                    <li>
+                        {{ professor.nome }}
+                        {% if professor.pagina_lusofona %}<a href="{{ professor.pagina_lusofona }}">(Página Lusófona)</a>{% endif %}
+                        {% if professor.pagina_linkedin %}<a href="{{ professor.pagina_linkedin }}">(LinkedIn)</a>{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+
+{% endblock %}
